@@ -2,7 +2,7 @@
 
 
 
-<div class="fieldcontain ${hasErrors(bean: servidorInstance, field: 'siape', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: servidorInstance, field: 'siape', 'error')} required" style="padding-left:15px">
 	<label for="siape">
 		<g:message code="servidor.siape.label" default="Siape" />
 		<span class="required-indicator">*</span>
@@ -11,7 +11,7 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: servidorInstance, field: 'nome', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: servidorInstance, field: 'nome', 'error')} required" style="padding-left:15px">
 	<label for="nome">
 		<g:message code="servidor.nome.label" default="Nome" />
 		<span class="required-indicator">*</span>
@@ -20,7 +20,7 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: servidorInstance, field: 'cargo', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: servidorInstance, field: 'cargo', 'error')} required" style="padding-left:15px">
 	<label for="cargo">
 		<g:message code="servidor.cargo.label" default="Cargo" />
 		<span class="required-indicator">*</span>
@@ -29,7 +29,7 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: servidorInstance, field: 'setor', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: servidorInstance, field: 'setor', 'error')} required" style="padding-left:15px">
 	<label for="setor">
 		<g:message code="servidor.setor.label" default="Setor" />
 		<span class="required-indicator">*</span>

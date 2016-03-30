@@ -2,7 +2,7 @@
 
 
 
-<div class="fieldcontain ${hasErrors(bean: enderecoInstance, field: 'uf', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: enderecoInstance, field: 'uf', 'error')} required" style="padding-left:15px">
 	<label for="uf">
 		<g:message code="endereco.uf.label" default="Uf" />
 		<span class="required-indicator">*</span>
@@ -11,7 +11,7 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: enderecoInstance, field: 'cidade', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: enderecoInstance, field: 'cidade', 'error')} required" style="padding-left:15px">
 	<label for="cidade">
 		<g:message code="endereco.cidade.label" default="Cidade" />
 		<span class="required-indicator">*</span>
@@ -20,7 +20,7 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: enderecoInstance, field: 'cep', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: enderecoInstance, field: 'cep', 'error')} required" style="padding-left:15px">
 	<label for="cep">
 		<g:message code="endereco.cep.label" default="Cep" />
 		<span class="required-indicator">*</span>
@@ -29,7 +29,7 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: enderecoInstance, field: 'rua', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: enderecoInstance, field: 'rua', 'error')} required" style="padding-left:15px">
 	<label for="rua">
 		<g:message code="endereco.rua.label" default="Rua" />
 		<span class="required-indicator">*</span>
@@ -38,7 +38,7 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: enderecoInstance, field: 'bairro', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: enderecoInstance, field: 'bairro', 'error')} required" style="padding-left:15px">
 	<label for="bairro">
 		<g:message code="endereco.bairro.label" default="Bairro" />
 		<span class="required-indicator">*</span>

@@ -28,9 +28,10 @@
 
                                     <g:if test="${session.usuario.name == 'Administrador'}">
 
-                                        <li><g:link controller="empresa"><span class="icon icon-adjust" aria-hidden="true"></span> Empresa</g:link></li>
-                                        <li><g:link controller="equipamento"><span class="icon icon-list" aria-hidden="true"></span> Equipamento</g:link></li>
-                                       <li><g:link controller="servico"><span class="icon icon-move" aria-hidden="true"></span> Servico</g:link></li>
+                                        <li><g:link controller="empresa"><span class="icon icon-briefcase" aria-hidden="true"></span> Empresa</g:link></li>
+                                        <li><g:link controller="equipamento"><span class="icon icon-hdd" aria-hidden="true"></span> Equipamento</g:link></li>
+                                       <li><g:link controller="servico"><span class="icon icon-wrench" aria-hidden="true"></span> Serviço</g:link></li>
+                                       <li><g:link controller="contato"><span class="icon icon-envelope"></span> Contato</g:link></li>
                                        <li><g:link controller="usuario"><span class="icon icon-user" aria-hidden="true"></span> Usuário</g:link></li>
                                         
                                         
@@ -54,8 +55,8 @@
                       
                             
                            <center>
-                                <h2 style="color:#006400">Sistema de Registro de Produção do IFC-Camboriú - SISPROD</h2>
-                                <!--<asset:image src="prod.png" alt="Grails"/>-->
+                                <h2 style="color:#006400">Sistema de Registro de Manutenção e Serviços de Reparos - SISRMS</h2>
+                                <asset:image src="Manut-05-03.png" alt="Grails"/>
                             </center>
                         
                         </div>

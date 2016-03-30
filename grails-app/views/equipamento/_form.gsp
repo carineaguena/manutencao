@@ -2,7 +2,7 @@
 
 
 
-<div class="fieldcontain ${hasErrors(bean: equipamentoInstance, field: 'patrimonio', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: equipamentoInstance, field: 'patrimonio', 'error')} required" style="padding-left:15px">
 	<label for="patrimonio">
 		<g:message code="equipamento.patrimonio.label" default="Patrimonio" />
 		<span class="required-indicator">*</span>
@@ -11,7 +11,7 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: equipamentoInstance, field: 'nome', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: equipamentoInstance, field: 'nome', 'error')} required" style="padding-left:15px">
 	<label for="nome">
 		<g:message code="equipamento.nome.label" default="Nome" />
 		<span class="required-indicator">*</span>
@@ -20,7 +20,7 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: equipamentoInstance, field: 'descricao', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: equipamentoInstance, field: 'descricao', 'error')} required" style="padding-left:15px">
 	<label for="descricao">
 		<g:message code="equipamento.descricao.label" default="Descricao" />
 		<span class="required-indicator">*</span>
@@ -29,7 +29,7 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: equipamentoInstance, field: 'local', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: equipamentoInstance, field: 'local', 'error')} required" style="padding-left:15px">
 	<label for="local">
 		<g:message code="equipamento.local.label" default="Local" />
 		<span class="required-indicator">*</span>
@@ -38,7 +38,7 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: equipamentoInstance, field: 'servidor', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: equipamentoInstance, field: 'servidor', 'error')} required" style="padding-left:15px">
 	<label for="servidor">
 		<g:message code="equipamento.servidor.label" default="Servidor" />
 		<span class="required-indicator">*</span>

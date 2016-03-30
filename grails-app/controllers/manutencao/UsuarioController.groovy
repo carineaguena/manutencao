@@ -5,175 +5,100 @@ package manutencao
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
+@Transactional(readOnly = true)
 class UsuarioController {
 
-     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
+    static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
-    def scaffold = Usuario
-
-  // def login = {}
-
-  //controle de autenticacao (deve ser colocado em todos os controles que deseja proteger)
-    def beforeInterceptor = [action:this.&auth]
-        
-    def auth() {
-        if(!session.usuario) {
-            redirect(controller:"autentica", action:"login")
-            return false
-        }
-       
+    def index(Integer max) {
+        params.max = Math.min(max ?: 10, 100)
+        respond Usuario.list(params), model:[usuarioInstanceCount: Usuario.count()]
     }
 
-    //copiar até aqui 
-  
-    @Transactional
+    def show(Usuario usuarioInstance) {
+        respond usuarioInstance
+    }
 
     def create() {
-      if(session.usuario.name!="Administrador")
-            {
-               flash.message = "Desculpe, você não tem permissão para acessar essa página"
-                session.usuario = null
-                redirect(controller:"autentica", action:"login")
-
-             }
-        else respond new Usuario(params)
-    }
-
-    def edit(Usuario userInstance) {
-       if(session.usuario.name!="Administrador")
-            {
-               respond session.usuario
-
-             }
-        else respond userInstance
-    }
-
-    def show(Usuario userInstance) {
-         if(session.usuario.name!="Administrador")
-            {
-               respond session.usuario
-
-             }
-        else respond userInstance
+        respond new Usuario(params)
     }
 
     @Transactional
-   /* def update(Produto produtoInstance) {
-        if (produtoInstance == null) {
+    def save(Usuario usuarioInstance) {
+        if (usuarioInstance == null) {
             notFound()
             return
         }
 
-        if (produtoInstance.hasErrors()) {
-            respond produtoInstance.errors, view:'edit'
+        if (usuarioInstance.hasErrors()) {
+            respond usuarioInstance.errors, view:'create'
             return
         }
 
-        produtoInstance.save flush:true
+        usuarioInstance.save flush:true
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'Produto.label', default: 'Produto'), produtoInstance.id])
-                redirect produtoInstance
+                flash.message = message(code: 'default.created.message', args: [message(code: 'usuario.label', default: 'Usuario'), usuarioInstance.id])
+                redirect usuarioInstance
             }
-            '*'{ respond produtoInstance, [status: OK] }
-        }
-    }*/
-
-
-
-       
-    def save(Usuario userInstance) {
-        if (params.confirmacao == userInstance.password){
-
-        if (userInstance == null) {
-            notFound()
-            return
-        }
-
-
-
-        if (userInstance.hasErrors()) {
-            respond userInstance.errors, view:'create'
-            return
-        }
-
-        userInstance.password = userInstance.password.encodeAsPassword()
-
-        userInstance.save flush:true
-
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'user.label', default: 'User'), userInstance.id])
-                redirect userInstance
-            }
-            '*' { respond userInstance, [status: CREATED] }
-        }
-      }
-      else{ 
-          flash.message = "Desculpe, as senhas não são iguais. Por favor, tente novamente."
-          redirect(action: "create")
-        }
-  }
-
-  @Transactional
-    def update(Usuario userInstance) {
-
-      if (params.confirmacao == userInstance.password){
-
-
-        if (userInstance == null) {
-            notFound()
-            return
-        }
-
-        if (userInstance.hasErrors()) {
-            respond medidaInstance.errors, view:'edit'
-            return
-        }
-
-      userInstance.password = userInstance.password.encodeAsPassword()        
-
-      userInstance.save flush:true
-
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'user.label', default: 'User'), userInstance.id])
-                redirect userInstance
-            }
-            '*'{ respond medidaInstance, [status: OK] }
+            '*' { respond usuarioInstance, [status: CREATED] }
         }
     }
-    else{ 
-          flash.message = "Desculpe, as senhas não são iguais. Por favor, tente novamente."
-          redirect(action: "edit", id: userInstance.id)
+
+    def edit(Usuario usuarioInstance) {
+        respond usuarioInstance
+    }
+
+    @Transactional
+    def update(Usuario usuarioInstance) {
+        if (usuarioInstance == null) {
+            notFound()
+            return
         }
 
+        if (usuarioInstance.hasErrors()) {
+            respond usuarioInstance.errors, view:'edit'
+            return
+        }
 
-  }
+        usuarioInstance.save flush:true
 
-
-
-
-/*  def authenticate = {
-    def passwordHashed = params.password.encodeAsPassword()
-    def usuario = Usuario.findByLoginAndPassword(params.login, passwordHashed)
-    //def usuario = Usuario.findByLoginAndPassword(params.login, params.password)
-    if(usuario){
-      session.usuario = usuario
-      //flash.message = "Olá ${usuario.name}!"
-      //loga e manda para pagina do controle
-      render(view:'/home')
-    }else{
-      flash.message = "Desculpe, ${params.login}. Por favor, tente novamente."
-      redirect(action:"login")
+        request.withFormat {
+            form multipartForm {
+                flash.message = message(code: 'default.updated.message', args: [message(code: 'Usuario.label', default: 'Usuario'), usuarioInstance.id])
+                redirect usuarioInstance
+            }
+            '*'{ respond usuarioInstance, [status: OK] }
+        }
     }
-  }
 
-  def logout = {
-    //flash.message = "Até mais ${session.usuario.name}"
-    session.usuario = null
-    //desloga e manda para a pagina inicial do servidor
-    render(view:"/home")
-  }*/
+    @Transactional
+    def delete(Usuario usuarioInstance) {
+
+        if (usuarioInstance == null) {
+            notFound()
+            return
+        }
+
+        usuarioInstance.delete flush:true
+
+        request.withFormat {
+            form multipartForm {
+                flash.message = message(code: 'default.deleted.message', args: [message(code: 'Usuario.label', default: 'Usuario'), usuarioInstance.id])
+                redirect action:"index", method:"GET"
+            }
+            '*'{ render status: NO_CONTENT }
+        }
+    }
+
+    protected void notFound() {
+        request.withFormat {
+            form multipartForm {
+                flash.message = message(code: 'default.not.found.message', args: [message(code: 'usuario.label', default: 'Usuario'), params.id])
+                redirect action: "index", method: "GET"
+            }
+            '*'{ render status: NOT_FOUND }
+        }
+    }
 }

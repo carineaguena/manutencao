@@ -2,7 +2,7 @@
 
 
 
-<div class="fieldcontain ${hasErrors(bean: empresaInstance, field: 'nome', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: empresaInstance, field: 'nome', 'error')} required" style="padding-left:15px">
 	<label for="nome">
 		<g:message code="empresa.nome.label" default="Nome" />
 		<span class="required-indicator">*</span>
@@ -11,7 +11,7 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: empresaInstance, field: 'cnpj', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: empresaInstance, field: 'cnpj', 'error')} required" style="padding-left:15px">
 	<label for="cnpj">
 		<g:message code="empresa.cnpj.label" default="Cnpj" />
 		<span class="required-indicator">*</span>
@@ -20,7 +20,7 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: empresaInstance, field: 'razao_social', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: empresaInstance, field: 'razao_social', 'error')} required" style="padding-left:15px">
 	<label for="razao_social">
 		<g:message code="empresa.razao_social.label" default="Razaosocial" />
 		<span class="required-indicator">*</span>
@@ -29,7 +29,7 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: empresaInstance, field: 'email', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: empresaInstance, field: 'email', 'error')} required" style="padding-left:15px">
 	<label for="email">
 		<g:message code="empresa.email.label" default="Email" />
 		<span class="required-indicator">*</span>
@@ -38,7 +38,7 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: empresaInstance, field: 'objeto', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: empresaInstance, field: 'objeto', 'error')} required" style="padding-left:15px">
 	<label for="objeto">
 		<g:message code="empresa.objeto.label" default="Objeto" />
 		<span class="required-indicator">*</span>
@@ -47,7 +47,7 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: empresaInstance, field: 'contato', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: empresaInstance, field: 'contato', 'error')} required" style="padding-left:15px">
 	<label for="contato">
 		<g:message code="empresa.contato.label" default="Contato" />
 		<span class="required-indicator">*</span>
@@ -56,7 +56,7 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: empresaInstance, field: 'endereco', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: empresaInstance, field: 'endereco', 'error')} required" style="padding-left:15px">
 	<label for="endereco">
 		<g:message code="empresa.endereco.label" default="Endereco" />
 		<span class="required-indicator">*</span>
@@ -65,7 +65,7 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: empresaInstance, field: 'vigencia_contrato', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: empresaInstance, field: 'vigencia_contrato', 'error')} required" style="padding-left:15px">
 	<label for="vigencia_contrato">
 		<g:message code="empresa.vigencia_contrato.label" default="Vigenciacontrato" />
 		<span class="required-indicator">*</span>
